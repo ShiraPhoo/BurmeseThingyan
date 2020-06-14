@@ -1,0 +1,221 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+}
+body{
+    font-family: 'Quattrocento Sans', sans-serif;
+    padding: 3rem;
+}
+
+.header{
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,
+   rgba(126, 213, 111, 0.6),
+   rgba(40, 180, 133, 0.6)),
+   url("../img/background.png");
+   background-size: cover;
+   background-position: top;
+   position: relative;
+}
+.navigation{
+    text-align: center;
+}
+.header__logo{
+    height: 3.5rem;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+.menu-toggle{
+    position: fixed;
+    color: #fff;
+    font-size: 2.2rem;
+    position: absolute;
+    top: 3.5rem;
+    transform: translateY(-50%);
+    right: 2.5rem;
+    cursor: pointer;
+    z-index: 1500;
+}
+.fa-times{
+    display: none;
+}
+.open .fa-times{
+    display: block;
+}
+.open .fa-bars{
+    display: none;
+}
+.open .navigation__list{
+    opacity: 1;
+}
+.open .navigation::before{
+    opacity: 1;
+    transform: scale(1);
+}
+.navigation__list{
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1250;
+    transition: transform .5s;
+    opacity: 0;
+}
+.navigation::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.8);
+    z-index: 1000;
+    transform: scale(0);
+    transition: opacity .5s;
+}
+/* .navigation__item{
+    padding: 1rem;
+} */
+.navigation__link:link,
+.navigation__link:visited{
+    list-style: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 300;
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+    background-size: 220%;
+    transition: all .4s;
+}
+.navigation__link:hover,
+.navigation__link:active{
+    background-position: 100%;
+    color:  rgba(40, 180, 133);
+    transform: translateX(1rem);
+}
+.navigation__content{
+    display: none;
+    list-style: none;   
+    z-index: 1;
+}
+.navigation__content .navigation__link{
+    color:  #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+.navigation__content .navigation__link:hover{
+    color:  rgba(40, 180, 133);
+}
+.navigation__item:hover .navigation__content{
+    display: block;
+}
+.header__text-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+.heading-primary--main{
+      display: block;
+      font-size: 3.5rem;
+      font-weight: bold;
+      letter-spacing: 1rem;
+      margin-bottom: 2rem;
+      font-family: 'Arvo', serif;
+}
+.heading-primary--sub{
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.5rem;
+      font-family: 'Quattrocento Sans', sans-serif;
+}
+.btn{
+      border: none;
+      border-radius: 5px;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+      background-size: 220%;
+      transition: all .4s;
+      color: white;
+      padding: 1rem 3rem;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1.1rem;
+      transition-duration: 0.4s;
+      cursor: pointer;
+}
+.btn--white{
+  color: #fff;
+  border: 2px solid #fff;
+  text-transform: uppercase;
+}
+.btn--white:hover {
+    background-position: 100%;
+    color:  rgba(40, 180, 133);
+    transform: translateX(1rem);
+}
+
+
+
+@media screen and (min-width:900px){
+    .menu-toggle{
+        display: none;
+    }
+    .navigation{
+        display: flex;
+        justify-content: space-between;
+    }
+  
+    .header__logo{
+        padding-left: 4rem;
+    }
+    .navigation__list{
+        position: initial;
+        display: flex;
+        flex-direction: row;
+        transform: initial;
+        transition: initial;
+        opacity: 1;
+        margin-top: 2rem;
+        margin-right: 2rem;
+    }
+    .navigation__link:link,
+    .navigation__link:visited{
+        font-size: 2rem;
+    }
+    .navigation__content .navigation__link{
+        display: block;
+    }
+    .heading-primary--main{
+        font-size: 4.5rem;
+    }
+    .heading-primary--sub{
+        font-size: 2rem;
+    }
+    .btn{
+        font-size: 16px;
+        padding: 16px 32px;
+    }
+
+}
